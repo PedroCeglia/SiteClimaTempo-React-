@@ -1,0 +1,37 @@
+header{
+    width: 100%;
+    background-color: rgb(126, 13, 231);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+header .search-view-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 10px;
+    max-width: 600px;
+    min-width: 250px;
+    background-color: #efefef;
+}
+header .search-view-container button{
+    border: none;
+    background-color: transparent;
+}
+header .search-view-container button img{
+    width: 25px;
+    height: 25px;
+    margin:5px 10px;
+    object-fit: cover;
+    cursor: pointer;
+}
+header .search-view-container input{
+    width: 100%;
+    outline: none;
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+
+}
