@@ -5,6 +5,7 @@ header{
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
+    height: 70px;
 }
 header .search-view-container{
     display: flex;
@@ -12,8 +13,9 @@ header .search-view-container{
     align-items: center;
     border-radius: 10px;
     padding: 0 10px;
-    max-width: 600px;
-    min-width: 250px;
+    max-width: 800px;
+    width: 100%;
+    min-width: 350px;
     background-color: #efefef;
 }
 header .search-view-container button{
