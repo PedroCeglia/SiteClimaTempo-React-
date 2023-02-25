@@ -5,7 +5,7 @@ const weatherApi = axios.create({
 })
 
 export async function getWeatherByLocation(location, setWeather){
-    const req = `/weather?q=${location}&appid=2933fdc575fb70fe1fc480000280d512`
+    const req = `/weather?q=${location}&appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}`
     const response = await weatherApi.get(req);
     setWeather(response.data)
     console.log(response.data)
