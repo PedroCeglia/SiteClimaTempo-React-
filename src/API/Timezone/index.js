@@ -1,13 +1,35 @@
-import axios from "axios"
+import {utcToZonedTime} from 'date-fns-tz'
 
-const timezoneRef = axios.create({
-    baseURL:'https://atlas.microsoft.com/timezone/byCoordinates'
-})
+export function formatToLocalTime(timezone){
+    if(timezone != null){
+        // Recuperar data Atual
+        const date = new Date().getTime()
+        // Passar a Timezone para o Horario atual
+        const horario = utcToZonedTime(date, timezone)
+        // Recuperar Hora e Minuto e passar para int
+        const hora = parseInt(horario.getHours())
+        const minuto = parseInt(horario.getMinutes())
+        // Verificar a quantidade de caracteres e passar para String
+        const minutoStr = (minuto>=10)?minuto.toString():"0"+ minuto.toString()
+        const horaStr = (hora>=10)?hora.toString():"0" + hora.toString()
+        return horaStr + ":" + minutoStr
+    }
+}
 
-export async function getTimezone(query, setTimezone){
-    const req = `/json?api-version=1.0&query=${query}`
-    const res = await timezoneRef.get(req)
-    // Set Location
-    console.log(res.data)
-    setTimezone(res.data)
+export function getDateByTimezone(timezone){
+    if(timezone != null){
+        const date = new Date().getTime()
+        return utcToZonedTime(date, timezone)
+    }
+}
+
+export function verifyDaysInMonth(month){
+    switch(month){
+        case 0,2,4,6,7,9,11:
+            return 31
+        case 1:
+            return 28
+        case 3,5,8,10:
+            return 30
+    }
 }
