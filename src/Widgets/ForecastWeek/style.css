@@ -7,12 +7,33 @@
 
     width: 30%;
     min-height: 500px;
-    min-width: 400px;
+    height: 80vh;
+    max-height: 800px;
+    min-width: 450px;
     padding: 5px;
     margin: 5px;
+
+    overflow: auto;
     
     border-radius: 10px;
     background-color: #efefef68;
+}
+.forecast-week-container::-webkit-scrollbar{
+    width: 10px;          
+}
+.forecast-week-container::-webkit-scrollbar-track{
+    background: rgb(84, 151, 223);        /* color of the tracking area */
+    border-radius: 5px;
+}
+.forecast-week-container::-webkit-scrollbar-thumb{
+    background-color: rgba(41, 41, 154, 0.537);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    margin: 2px;
+}
+.forecast-week-container span.header-main{
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    text-align: center;
 }
 .forecast-week-container .forecast-week-list{
     display: flex;
@@ -22,11 +43,7 @@
     align-items: center;
     flex-wrap: wrap;
 }
-.forecast-week-container span.header-main{
-    font-size: 1.5em;
-    margin-bottom: 5px;
-    text-align: center;
-}
+
 .forecast-week-container .forecast-week-list .forecast-week-item{
     width: calc(100% - 20px);
     height: 70px;
