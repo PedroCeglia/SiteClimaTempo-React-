@@ -1,31 +1,27 @@
 import { useState, useEffect } from 'react'
 import './style.css'
 
-import {getDateByTimezone, verifyDaysInMonth} from '../../API/Timezone'
-
+// Import Timezone Services
+import {verifyDaysInMonth} from '../../API/Timezone'
 
 export default function ForecastWeek(props){
-
-    // Recuperando previsao da semana
+    
+    // Recupera Previsão da Semana
+    const [dataLocal, setDataLocal] = useState({date:0,monthDays:0})
     const [forecastWeek, setForecastWeek] = useState([])
     useEffect(()=>{
-        if(props.forecastWeek != null){
-            setForecastWeek(props.forecastWeek)
-        }
-    },[props.forecastWeek])
-    
-    // Recuperando Data com Fuso Horario
-    const [dataLocal, setDataLocal] = useState({date:0,monthDays:0})
-    useEffect(()=>{
-        if(props.timezone != null){
-            // Data Local
-            const newData = getDateByTimezone(props.timezone)
-            // Quantidade de Dias no Mes
+        if(props.forecast.forecast != null && props.forecast.timezone != null){
+            // Recuperando previsao da semana
+            setForecastWeek(props.forecast.forecast)
+
+            // Recuperando Data com Fuso Horario
+            const newData = props.forecast.timezone
+            // Recupera a quantidade de dias no mês
             const monthDays = verifyDaysInMonth(newData.getMonth())
             setDataLocal({date:newData,monthDays:monthDays})
-        }
-    },[props.timezone])
 
+        }
+    },[props.forecast])
 
     return(
         <div className='forecast-week-container'>

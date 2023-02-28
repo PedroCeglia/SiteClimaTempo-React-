@@ -1,26 +1,24 @@
 import { useState, useEffect } from "react"
 import './style.css'
 
-// Import Services
-import { getDateByTimezone } from "../../API/Timezone"
-
 export default function ForecastDay(props){
 
-    // Recuperando Timezone && Lista de Previsão do Dia
+    // Recupera Previsão do Dia
     const [forecastDay,setForecastDay] = useState([])
     const [horaTimezone, setHoraTimezone] = useState(0)
     useEffect(()=>{
-        if(props.timezone != null && props.forecastDay != null){
-            // Recuperando Hora Local
-            const horaLocal = getDateByTimezone(props.timezone).getHours()
-            setHoraTimezone(horaLocal)
+        if(props.forecast != null){
+            if(props.forecast.timezone != null && props.forecast.forecast != null){
+                // Recuperando Hora Local
+                const horaLocal = props.forecast.timezone.getHours()
+                setHoraTimezone(horaLocal)
 
-            // Recuperando Previsões do Dia
-            const filterHoras = props.forecastDay.filter((dia, index)=> index <14)
-            setForecastDay(filterHoras)
-            console.log(filterHoras)
+                // Recuperando Previsões do Dia
+                const filterHoras = props.forecast.forecast.filter((dia, index)=> index <14)
+                setForecastDay(filterHoras)
+            }            
         }
-    },[props.timezone, props.forecastDay])
+    },[props.forecast])
 
     return(
         <div className="forecast-day-container">
