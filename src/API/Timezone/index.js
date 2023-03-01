@@ -16,6 +16,22 @@ export function formatToLocalTime(timezone){
     }
 }
 
+export function formatToLocalDate(timezone){
+    if(timezone != null){
+        // Recuperar Data com Timezone
+        const dataLocal = timezone
+        // Recuperar Dia & Mês e passar para int
+        const dia = parseInt(dataLocal.getDate())
+        const mes = parseInt(dataLocal.getMonth())
+        // Verificar a quantidade de caracteres e passar para String
+        const diaStr = (dia>=10)?dia.toString():"0"+ dia.toString()
+        const mesStr = (mes>=10)?mes.toString():"0" + mes.toString()
+        // Recupera o Ano 
+        const anoStr = dataLocal.getFullYear().toString()
+        return diaStr + "/" + mesStr + "/" + anoStr
+    }
+}
+
 export function getDateByTimezone(timezone){
     if(timezone != null){
         const date = new Date().getTime()
