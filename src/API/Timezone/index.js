@@ -1,5 +1,6 @@
 import {utcToZonedTime} from 'date-fns-tz'
 
+// Retorna horario atual com timezone (hh:mm) 
 export function formatToLocalTime(timezone){
     if(timezone != null){
         // Recuperar data Atual
@@ -15,7 +16,7 @@ export function formatToLocalTime(timezone){
         return horaStr + ":" + minutoStr
     }
 }
-
+// Retorna a data atual com timezone (dd/MM/aaaa) 
 export function formatToLocalDate(timezone){
     if(timezone != null){
         // Recuperar Data com Timezone
@@ -31,14 +32,14 @@ export function formatToLocalDate(timezone){
         return diaStr + "/" + mesStr + "/" + anoStr
     }
 }
-
+// Retorna objeto Date() atual com timezone (new Date())
 export function getDateByTimezone(timezone){
     if(timezone != null){
         const date = new Date().getTime()
         return utcToZonedTime(date, timezone)
     }
 }
-
+// Retorna a quantidade de dias em um  mês
 export function verifyDaysInMonth(month){
     switch(month){
         case 0,2,4,6,7,9,11:
