@@ -10,14 +10,15 @@ export default function ForecastDay(props){
         if(props.forecast != null){
             if(props.forecast.timezone != null && props.forecast.forecast != null){
                 // Recuperando Hora Local
-                const horaLocal = props.forecast.timezone.getHours()
+                const dateTz = new Date(props.forecast.timezone)
+                const horaLocal = dateTz.getHours()
                 setHoraTimezone(horaLocal)
 
                 // Recuperando Previsões do Dia
                 const filterHoras = props.forecast.forecast.filter((dia, index)=> index <14)
                 setForecastDay(filterHoras)
             }            
-        }
+        } 
     },[props.forecast])
 
     return(

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './style.css'
 
-// Import Timezone Services
+// Import Timezone Services 
 import {verifyDaysInMonth} from '../../API/Timezone'
 
 export default function ForecastWeek(props){
@@ -13,13 +13,11 @@ export default function ForecastWeek(props){
         if(props.forecast.forecast != null && props.forecast.timezone != null){
             // Recuperando previsao da semana
             setForecastWeek(props.forecast.forecast)
-
             // Recuperando Data com Fuso Horario
-            const newData = props.forecast.timezone
+            const dataTz = new Date(props.forecast.timezone)
             // Recupera a quantidade de dias no mês
-            const monthDays = verifyDaysInMonth(newData.getMonth())
-            setDataLocal({date:newData,monthDays:monthDays})
-
+            const monthDays = verifyDaysInMonth(dataTz.getMonth())
+            setDataLocal({date:dataTz,monthDays:monthDays})
         }
     },[props.forecast])
 

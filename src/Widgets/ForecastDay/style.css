@@ -1,12 +1,15 @@
+/* Forecast Day Container - INICIO - */
 .forecast-day-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 60%;
-    min-height: 75px;
-    padding: 10px;
-    margin: 20px;
+
+    width: 100%;
+    min-width: 550px;
+    min-height: 240px;
+    padding: 15px;
+
     border-radius: 10px;
     background-color: #efefef68;
 }
@@ -14,7 +17,7 @@
     font-size: 1.5em;
     margin-bottom: 5px;
 }
-
+/* Forecast Day List - INICIO - */
 .forecast-day-container .forecast-day-list{
     display: flex;
     width: 100%;
@@ -22,46 +25,41 @@
     align-items: center;
     overflow: auto;
 }
-
+/* Scroll Forecast Day List - INICIO - */
 .forecast-day-container .forecast-day-list::-webkit-scrollbar{
     width: 5px;          
-    border: 1px solid rgba(0,0,0,.5);
 }
 .forecast-day-container .forecast-day-list::-webkit-scrollbar-track{
     background: rgb(84, 151, 223);        /* color of the tracking area */
     border-radius: 5px;
 }
 .forecast-day-container .forecast-day-list::-webkit-scrollbar-thumb{
-    background-color: blue;    /* color of the scroll thumb */
+    background-color: rgba(41, 41, 154, 0.537);    /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
     margin: 2px;
 }
-
+/* Scroll Forecast Day List - FIM - */
+/* Forecast Day Item - INICIO - */
 .forecast-day-container .forecast-day-list .forecast-day-item{
-    width: 60px;
-    height: 100px;
-    margin: 10px;
+    min-width: 100px;
+    height: 200px;
+
+    margin: 10px 5px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
     border: 1px solid rgba(0,0,0,.5);
     border-radius: 5px;
-    padding: 5px;
     background-color: #cbe4f3aa;
 }
-
-.forecast-day-container .forecast-day-list .forecast-day-item{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
 .forecast-day-container .forecast-day-list .forecast-day-item img{
-    width: 40px;
-    height: 40px;
+    width: 100%;
+    max-width: 70px;
     object-fit: cover;
+    padding: 5px 2px;
 }
 .forecast-day-container .forecast-day-list .forecast-day-item span.header{
     width: 100%;
@@ -70,11 +68,47 @@
 }
 .forecast-day-container .forecast-day-list .forecast-day-item span.span-hora{
     font-size: 1.2em;
+    padding: 5px 2px;
+    text-align: center;
+    width: 100%;
     color: #2d2b2b;
-    font-weight: lighter;
+    border-bottom: 1px solid rgba(0,0,0,.5);
 }
 .forecast-day-container .forecast-day-list .forecast-day-item span.span-temp{
     font-size: 1.1em;
+    width: 100%;
+    text-align: center;
     color: #2d2b2b;
-    font-weight: lighter;
+    border-top: 1px solid rgba(0,0,0,.5);
 }
+/* Forecast Day Item - FIM - */
+/* Forecast Day List - FIM - */
+/* Forecast Day Container - FIM - */
+
+/* Media Querys*/
+@media all and (max-width:1100px) {
+    .forecast-day-container{
+        min-width: 800px;
+        margin-bottom: 10px;
+        padding: 20px;
+    }  
+}
+@media all and (max-width:900px) {
+    .forecast-day-container{
+        min-width: 550px;
+        padding: 20px;
+    }  
+}
+@media all and (max-width:600px) {
+    .forecast-day-container{
+        min-width: 400px;
+        padding: 20px;
+    }
+}
+@media all and (max-width:450px) {
+    .forecast-day-container{
+        min-width: 290px;
+        padding: 2px;
+    }
+}
+ 

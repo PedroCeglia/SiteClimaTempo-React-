@@ -1,4 +1,3 @@
-import {useState} from "react"
 import "./style.css"
 
 // Import Google Place AutoComplete
@@ -6,12 +5,14 @@ import {usePlacesWidget} from 'react-google-autocomplete'
 
 export default function SearchView(props){ 
 
-    const [inputSearchView, setInputSearchView] = useState('')
-
     // Buscar na API de Clima Tempo
-    function searchWeather(){
-        if(inputSearchView != null && inputSearchView != "" && props.setSearch != null){
-            props.setSearch(inputSearchView)
+    function searchWeather(googlePlace){
+        if(googlePlace != null && googlePlace != "" && props.setSearch != null){
+            props.setSearch({
+                placeName:googlePlace.formatted_address,
+                lat:googlePlace.geometry.location.lat(),
+                lng:googlePlace.geometry.location.lng()
+            })
         }
     }
 
@@ -19,14 +20,13 @@ export default function SearchView(props){
     const { ref } = usePlacesWidget({
         apiKey:process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         onPlaceSelected: (place) => {
-            setInputSearchView(place.address_components[0].long_name)
+            searchWeather(place)
         }
     })
 
     return(
         <div className='search-view-container'>
-            <input ref={ref}  type="text" value={inputSearchView} onChange={(e)=>{setInputSearchView(e.target.value)}}/>
-            <button onClick={searchWeather}><img src="./icons/search.png" alt='Search Icon' /></button>
+            <input ref={ref}  type="text"/>
         </div>
     )
 }
