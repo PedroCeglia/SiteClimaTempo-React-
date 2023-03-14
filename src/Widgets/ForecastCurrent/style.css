@@ -91,22 +91,20 @@ color: rgba(0,0,0,.8);
 /* Forecast Current Container - FIM - */
 
 /* Media Querys*/
-@media all and (max-width:1100px) {
+@media all and (max-width:1130px) {
     .forecast-current-container{
-        width: 90%;
-        min-width: 800px;
+        min-width: 95%;
+        width: 95%;
         padding: 20px;
     }  
 }
 @media all and (max-width:900px) {
     .forecast-current-container{
-        min-width: 550px;
         padding: 20px;
     }  
 }
 @media all and (max-width:600px) {
     .forecast-current-container{
-        min-width: 400px;
         padding: 10px;
     } 
     .forecast-current-container .top span.nome-lugar{
@@ -120,8 +118,7 @@ color: rgba(0,0,0,.8);
 }
 @media all and (max-width:450px) {
     .forecast-current-container{
-        min-width: 290px;
-        padding: 10px;
+        padding: 5px;
     } 
     .forecast-current-container .bottom .info-container span.header{
         font-size: .7em;

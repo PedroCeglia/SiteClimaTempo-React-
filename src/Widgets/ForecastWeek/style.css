@@ -115,21 +115,20 @@
 
 
 /* Media Querys*/
-@media all and (max-width:1100px) {
+@media all and (max-width:1130px) {
     .forecast-week-container{
-        min-width: 800px;
+        width: 95%;
+        min-width: 95%;
         padding: 20px;
     }  
 }
 @media all and (max-width:900px) {
     .forecast-week-container{
-        min-width: 550px;
         padding: 20px;
     }  
 }
 @media all and (max-width:600px) {
     .forecast-week-container{
-        min-width: 400px;
         padding: 20px;
     } 
     .forecast-week-container .forecast-week-list .forecast-week-item .info-container span.header{
@@ -138,7 +137,6 @@
 }
 @media all and (max-width:450px) {
     .forecast-week-container{
-        min-width: 290px;
         padding: 2px;
     } 
     .forecast-week-container .forecast-week-list .forecast-week-item .info-container span.header{

@@ -86,29 +86,27 @@
 /* Forecast Day Container - FIM - */
 
 /* Media Querys*/
-@media all and (max-width:1100px) {
+@media all and (max-width:1130px) {
     .forecast-day-container{
-        min-width: 800px;
+        width: 95%;
+        min-width: 95%;
         margin-bottom: 10px;
         padding: 20px;
     }  
 }
 @media all and (max-width:900px) {
     .forecast-day-container{
-        min-width: 550px;
         padding: 20px;
     }  
 }
 @media all and (max-width:600px) {
     .forecast-day-container{
-        min-width: 400px;
         padding: 20px;
     }
 }
 @media all and (max-width:450px) {
     .forecast-day-container{
-        min-width: 290px;
-        padding: 2px;
+        padding: 20px;
     }
 }
  
