@@ -1,12 +1,22 @@
 import { useState, useEffect } from 'react'
 import './style.css'
 
-// Import Timezone Services 
-import {verifyDaysInMonth} from '../../API/Timezone'
-
 export default function ForecastWeek(props){
     
     // Recupera Previsão da Semana
+
+    // Retorna a quantidade de dias em um  mês
+    function verifyDaysInMonth(month){
+        switch(month){
+            case 0,2,4,6,7,9,11:
+                return 31
+            case 1:
+                return 28
+            case 3,5,8,10:
+                return 30
+        }
+    }
+
     const [dataLocal, setDataLocal] = useState({date:0,monthDays:0})
     const [forecastWeek, setForecastWeek] = useState([])
     useEffect(()=>{
