@@ -3,7 +3,6 @@ import "./style.css"
 
 // Import Widgets
 import Header from "../Header";
-import SearchView from "../SearchView";
 import ForecastWeek from "../ForecastWeek";
 import ForecastDay from "../ForecastDay";
 import ForecastCurrent from "../ForecastCurrent";
