@@ -52,7 +52,7 @@ export default function ForecastCurrent(props){
             // Mudar Campo Precimpitação ( mm/h )
             const precipitacao = forecastCurrent.pop * 100
             console.log(precipitacao)
-            setCampoPrecipitacao(precipitacao.slice(0,1))
+            setCampoPrecipitacao(precipitacao.toString().slice(0,1))
             // Recuperar icon
             const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${forecastCurrent.weather[0]["icon"]}.svg`
             setCampoIcon(icon)
