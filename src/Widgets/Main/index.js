@@ -27,7 +27,6 @@ export default function Main(){
     },[search])
 
     // Configuração Inicial
-    const forecastDefault = { cod:404, forecastHour:[], forecastDay:[], forecastWeek:[] }
     const [forecastWeek, setForecastWeek] = useState({
         forecast:[],
         timezone:null
