@@ -18,7 +18,7 @@ export default function Main(){
     const [search, setSearch] = useState({ placeName:"", lat:null, lng:null })
     const [forecast, setForecast] = useState(null);
     useEffect(()=>{
-        if(search.lat != null && search.lng != null && search.placeName != ""){
+        if(search.lat !== null && search.lng !== null && search.placeName !== ""){
             // Reiniciar UI
             setHasForecast('content loading')
             // Buscar Por Respostas
