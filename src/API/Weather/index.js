@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const weatherForecastApi = axios.create({
-    baseURL:`https://clima-tempo-api.herokuapp.com`
+    baseURL:`https://api-clima-tempo.herokuapp.com`
 }) 
 
 // Recuperamos a Previsão da Semana e do Dia a partir de uma latitude e uma longitude
