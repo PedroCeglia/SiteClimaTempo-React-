@@ -61,7 +61,7 @@ export default function ForecastCurrent(props){
 
     // Formatando Relógio
     function formatToLocalTime(dateTz){
-        if(timezone != null){
+        if(dateTz != null){
             console.log(dateTz)
             // Recuperar Hora e Minuto e passar para int
             const hora = parseInt(dateTz.getHours())
