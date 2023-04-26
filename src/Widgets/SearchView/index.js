@@ -4,7 +4,7 @@ import "./style.css"
 import {usePlacesWidget} from 'react-google-autocomplete'
 
 export default function SearchView(props){ 
-
+    const googleAPIKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
     // Buscar na API de Clima Tempo
     function searchWeather(googlePlace){
         if(googlePlace != null && googlePlace != "" && props.setSearch != null){
@@ -18,7 +18,7 @@ export default function SearchView(props){
 
     // Google AutoComplete  
     const { ref } = usePlacesWidget({
-        apiKey:process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        apiKey:googleAPIKey,
         onPlaceSelected: (place) => {
             searchWeather(place)
         }
