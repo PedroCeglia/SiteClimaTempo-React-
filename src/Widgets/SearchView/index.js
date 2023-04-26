@@ -1,4 +1,6 @@
 import "./style.css"
+import dotenv from "dotenv"
+dotenv.config();
 
 // Import Google Place AutoComplete
 import {usePlacesWidget} from 'react-google-autocomplete'
